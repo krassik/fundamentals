@@ -14,13 +14,20 @@ class Stack(object):
     def __init__(self,top=None):
         self.ll = LinkedList(top)
 
+    def isEmpty(self):
+        return self.ll.get_position(1) == None
+
     def push(self, new_element):
         "Push (add) a new element onto the top of the stack"
-        pass
+        self.ll.insert_first(new_element)
 
     def pop(self):
         "Pop (remove) the first element off the top of the stack and return it"
-        pass
+        if self.isEmpty():
+            return None
+            
+        head = self.ll.delete_first()
+        return head
     
 # Test cases
 # Set up some Elements
@@ -35,9 +42,9 @@ stack = Stack(e1)
 # Test stack functionality
 stack.push(e2)
 stack.push(e3)
-print stack.pop().value
-print stack.pop().value
-print stack.pop().value
-print stack.pop()
+print(stack.pop().value)
+print( stack.pop().value)
+print( stack.pop().value)
+print( stack.pop() )
 stack.push(e4)
-print stack.pop().value
+print(stack.pop().value)

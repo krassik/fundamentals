@@ -82,24 +82,29 @@ class LinkedList(object):
 
     def delete_first(self):
         "Delete the first (head) element in the LinkedList as return it"
-        pass
+        head = self.head
+        self.head = self.head.next
+        return head
+
+
 
 
 #Test
 
 
-# Test cases
-# Set up some Elements
-e1 = Element(1)
-e2 = Element(2)
-e3 = Element(3)
-e4 = Element(4)
+# # Test cases
+# # Set up some Elements
+# e1 = Element(1)
+# e2 = Element(2)
+# e3 = Element(3)
+# e4 = Element(4)
 
-# Start setting up a LinkedList
-ll = LinkedList(e1)
-ll.append(e2)
-ll.append(e3)
+# # Start setting up a LinkedList
+# ll = LinkedList(e1)
+# ll.append(e2)
+# ll.append(e3)
 
-ll.print()
-ll.insert_first(e4)
-ll.print()
+# ll.print()
+# #ll.insert_first(e4)
+# print(ll.delete_first().value)
+# ll.print()
